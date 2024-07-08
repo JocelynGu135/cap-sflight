@@ -17,7 +17,7 @@ entity Travel : managed {
   BookingFee     : Decimal(16, 3);
   TotalPrice     : Decimal(16, 3) @readonly;
   CurrencyCode   : Currency;
-  Description    : String(1024);
+  Description    : localized String(1024);
   TravelStatus   : Association to TravelStatus @readonly;
   to_Agency      : Association to TravelAgency;
   to_Customer    : Association to Passenger;
