@@ -78,4 +78,6 @@ service AnalyticsService @(path:'/analytics') {
     Common.Label: '{i18n>Distance}',
     Measures.Unit : DistanceUnit
   );
+
+  entity Activities as projection on my.Activities;
 }

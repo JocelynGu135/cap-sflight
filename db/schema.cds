@@ -1,4 +1,4 @@
-using { Currency, custom.managed, sap.common.CodeList } from './common';
+using { Currency, cuid, custom.managed, sap.common.CodeList } from './common';
 using {
   sap.fe.cap.travel.Airline,
   sap.fe.cap.travel.Passenger,
@@ -88,3 +88,30 @@ entity TravelStatus : CodeList {
   createDeleteHidden: Boolean;
   insertDeleteRestriction: Boolean; // = NOT createDeleteHidden
 }
+
+entity ActivitiesBuiltIn : cuid {
+  name: localized String(10);
+  description: localized String(20);
+}
+
+entity ActivitiesCustom : cuid {
+  name: localized String(10);
+  description: localized String(20);
+}
+
+entity Activities as (
+    select from ActivitiesBuiltIn {
+        key ID,
+        name,
+        description,
+        texts
+    }
+)
+union all (
+    select from ActivitiesCustom {
+       key ID,
+       name,
+       description,
+       texts
+    }
+);
