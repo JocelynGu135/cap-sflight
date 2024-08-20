@@ -32,10 +32,10 @@ annotate service.Activities with @UI : {
         {
             $Type : 'UI.ReferenceFacet',
             ID    : 'GeneralInformation',
-            Label : '{i18n>facet_title_general_information}',
+            Label : 'General Infomation',
             Target: '@UI.FieldGroup#GeneralInformation'
         },
-        {$Type: 'UI.ReferenceFacet', Label: '{i18n>Translations}', Target:  'texts/@UI.LineItem'},
+        {$Type: 'UI.ReferenceFacet', Label: 'Translations', Target:  'texts/@UI.LineItem'},
     ],
 
     FieldGroup #GeneralInformation: {Data: [
